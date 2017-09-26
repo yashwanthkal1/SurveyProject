@@ -3,13 +3,16 @@ package com.nic.dto;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 public class SurveyDto implements IDto {
 
   private Long id;
 
   private String surveyName;
-
+  
+  @JsonManagedReference
   private Set<CategoryDto> categories = new HashSet<>();
 
   public SurveyDto() {}

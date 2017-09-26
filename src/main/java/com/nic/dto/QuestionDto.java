@@ -3,6 +3,8 @@ package com.nic.dto;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.nic.model.Question;
 
 public class QuestionDto implements IDto {
@@ -10,13 +12,15 @@ public class QuestionDto implements IDto {
   private static final long serialVersionUID = -6435125739500356524L;
 
   private Long id;
-
+  
+  @JsonBackReference
   private CategoryDto category;
 
   private String question;
 
   private QuestionTypeDto questionType;
 
+  @JsonManagedReference
   private Set<QuestionChoiceDto> questionChoice = new HashSet<>();
   
   private Question parentQuestion;
