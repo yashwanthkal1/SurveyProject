@@ -1,11 +1,14 @@
 package com.nic.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 public class QuestionChoiceDto implements IDto {
 
   private static final long serialVersionUID = -7397043528713658635L;
 
   private Long id;
-
+  
+  @JsonBackReference
   private QuestionDto questionId;
 
   private String choice;
